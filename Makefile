@@ -6,33 +6,33 @@
 #    By: dgeorgiy <dgeorgiy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/24 19:28:41 by dgeorgiy          #+#    #+#              #
-#    Updated: 2025/02/24 20:19:16 by dgeorgiy         ###   ########.fr        #
+#    Updated: 2025/02/26 11:00:15 by dgeorgiy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
 LIBFT = libft/libft.a
-MINILIBX = minilibx-linux/libmlx.a
+# MINILIBX = minilibx-linux/libmlx.a
 FLAGS = -Wall -Wextra -Werror
 CC = cc
 SOURCES = fractol.c
-OBJECTS = $(SOURCES:.c=.o)
+OBJ = $(SOURCES:.c=.o)
 
 %.o: %.c
-		$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -I/usr/include -I mlx_linux -O3 -c $< -o $@
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS) $(LIBFT) $(MINILIBX)
-		$(CC) $(FLAGS) -o $(NAME) $(OBJECTS) $(LIBFT) $(MINILIBX)
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 
 clean:
-		rm -f $(OBJECTS)
+		rm -f $(OBJ)
 		$(MAKE) -C libft clean 
 
 fclean: clean
 		rm -f $(NAME)
-		$(MAKE) -c libft fclean
+		$(MAKE) -C libft fclean
 
 re: fclean all
 
