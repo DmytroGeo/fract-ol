@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgeorgiy <dgeorgiy@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 10:31:49 by dgeorgiy          #+#    #+#             */
-/*   Updated: 2025/02/27 11:31:46 by dgeorgiy         ###   ########.fr       */
+/*   Created: 2024/06/25 20:19:10 by dgeorgiy          #+#    #+#             */
+/*   Updated: 2025/01/29 10:53:20 by dgeorgiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#include "libft.h"
 
-# include "./libft/libft.h"
-#include "./mlx_linux/mlx.h"
-
-typedef struct s_data {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-} t_data ;
-
-typedef struct s_vars {
-	void *mlx;
-	void *win;
-} t_vars;
-
-#endif
+void	ft_putchar_fd(char c, int fd, int *count)
+{
+	write(fd, &c, 1);
+	(*count)++;
+}

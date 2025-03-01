@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   ft_putuns_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgeorgiy <dgeorgiy@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 10:31:49 by dgeorgiy          #+#    #+#             */
-/*   Updated: 2025/02/27 11:31:46 by dgeorgiy         ###   ########.fr       */
+/*   Created: 2024/11/28 11:15:16 by dgeorgiy          #+#    #+#             */
+/*   Updated: 2025/01/29 10:52:55 by dgeorgiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#include "libft.h"
 
-# include "./libft/libft.h"
-#include "./mlx_linux/mlx.h"
+void	ft_putuns_fd(unsigned int n, int fd, int *count)
+{
+	long int	l;
 
-typedef struct s_data {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-} t_data ;
-
-typedef struct s_vars {
-	void *mlx;
-	void *win;
-} t_vars;
-
-#endif
+	l = n;
+	if (l < 0)
+	{
+		ft_putchar_fd('-', fd, count);
+		l *= -1;
+	}
+	if (l >= 10)
+	{
+		ft_putuns_fd(l / 10, fd, count);
+		ft_putchar_fd((l % 10) + 48, fd, count);
+	}
+	else
+		ft_putchar_fd(l + 48, fd, count);
+}

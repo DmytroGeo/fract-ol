@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgeorgiy <dgeorgiy@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 10:31:49 by dgeorgiy          #+#    #+#             */
-/*   Updated: 2025/02/27 11:31:46 by dgeorgiy         ###   ########.fr       */
+/*   Created: 2025/02/24 13:10:36 by dgeorgiy          #+#    #+#             */
+/*   Updated: 2025/02/27 09:46:50 by dgeorgiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#include "libft.h"
 
-# include "./libft/libft.h"
-#include "./mlx_linux/mlx.h"
-
-typedef struct s_data {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-} t_data ;
-
-typedef struct s_vars {
-	void *mlx;
-	void *win;
-} t_vars;
-
-#endif
+char	*ft_strcpy(char *dst, const char *src)
+{
+    size_t  i;
+    
+    i = 0;
+    while (src[i])
+    {
+        dst[i] = src[i];
+        i++;
+    }
+    dst[i] = '\0';
+	return (dst);
+}
