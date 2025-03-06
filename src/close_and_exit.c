@@ -6,13 +6,13 @@
 /*   By: dgeorgiy <dgeorgiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:58:02 by dgeorgiy          #+#    #+#             */
-/*   Updated: 2025/03/06 17:17:10 by dgeorgiy         ###   ########.fr       */
+/*   Updated: 2025/03/06 20:24:13 by dgeorgiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-int close_window(t_fractol *fractol)
+int	close_window(t_fractol *fractol)
 {
 	if (!fractol)
 		exit(1);
