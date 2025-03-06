@@ -6,7 +6,7 @@
 /*   By: dgeorgiy <dgeorgiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:53:20 by dgeorgiy          #+#    #+#             */
-/*   Updated: 2025/03/06 14:57:01 by dgeorgiy         ###   ########.fr       */
+/*   Updated: 2025/03/06 17:11:51 by dgeorgiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "./mlx_linux/mlx.h"
 # include <stdlib.h>
 # include <math.h>
+# include <X11/keysym.h>
+# include <X11/X.h>
 # include "./libft/libft.h"
 
 # define WIDTH 800
@@ -24,12 +26,6 @@
 
 # define MANDELBROT 1
 # define JULIA 2
-
-# define KEY_ESC 53
-# define KEY_LEFT 123
-# define KEY_RIGHT 124
-# define KEY_UP 126
-# define KEY_DOWN 125
 
 # define SCROLL_UP 4
 # define SCROLL_DOWN 5
@@ -54,12 +50,11 @@ typedef struct s_fractol
     double  offset_y;
 }   t_fractol;
 
-void    mlx_my_put_pixel(t_img *img, int x, int y, int color);
+void	my_mlx_pixel_put(t_img *data, int x, int y, int color);
 int     close_window(t_fractol *fractol);
 int     key_hooks(int keycode, t_fractol *fractol);
 int     mouse_hooks(int button, int x, int y, t_fractol *fractol);
-void    setup_hooks(t_fractol *fractol);
-int     parse_args(int argc, char **argv, t_fractol *fractol);
+int     init_fractol(int argc, char **argv, t_fractol *fractol);
 int     get_color(int iteration, int max_iter);
 void    render(t_fractol *fractol);
 

@@ -6,13 +6,14 @@
 #    By: dgeorgiy <dgeorgiy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/24 19:28:41 by dgeorgiy          #+#    #+#              #
-#    Updated: 2025/03/06 15:08:05 by dgeorgiy         ###   ########.fr        #
+#    Updated: 2025/03/06 17:01:34 by dgeorgiy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
-FLAGS = 
+FLAGS = -Wall -Wextra -Werror
 LIBFT = libft/libft.a
+# MLX = mlx/
 CC = cc
 SOURCES = src/hooks.c \
 				src/colour.c \
@@ -41,11 +42,13 @@ all: libft $(NAME)
 # Now $(NAME) is properly treated as a dependency of all,
 #  so Make knows it needs to look for a rule to build $(NAME), instead of trying to run it as a command.
 
+# mlx: 
+# 		$(MAKE) -C mlx_linux
 libft: 
 		$(MAKE) -C libft
 
 $(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(FLAGS) $(LIBFT) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) $(OBJ)
+	$(CC) $(OBJ) $(LIBFT) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) 
 
 clean:
 		rm -f $(OBJ)
