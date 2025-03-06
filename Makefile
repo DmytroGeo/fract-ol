@@ -3,23 +3,23 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dgeorgiy <dgeorgiy@student.42.fr>          +#+  +:+       +#+         #
+#    By: dgeorgiy <dgeorgiy@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/24 19:28:41 by dgeorgiy          #+#    #+#              #
-#    Updated: 2025/03/06 17:01:34 by dgeorgiy         ###   ########.fr        #
+#    Updated: 2025/03/06 19:47:02 by dgeorgiy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
 FLAGS = -Wall -Wextra -Werror
 LIBFT = libft/libft.a
-# MLX = mlx/
 CC = cc
 SOURCES = src/hooks.c \
 				src/colour.c \
 				src/close_and_exit.c \
 				src/initialise.c \
 				src/pixel_put.c \
+				src/compute_fractal.c \
 				src/render.c \
 				fractol.c
 

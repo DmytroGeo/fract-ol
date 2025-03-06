@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dgeorgiy <dgeorgiy@student.42.fr>          +#+  +:+       +#+         #
+#    By: dgeorgiy <dgeorgiy@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/12 12:03:28 by dgeorgiy          #+#    #+#              #
-#    Updated: 2025/02/24 15:11:56 by dgeorgiy         ###   ########.fr        #
+#    Updated: 2025/03/06 19:38:15 by dgeorgiy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ AR = ar rcs
 # "Create (c) the archive if it doesn't exist, replace (r) existing object files, and generate an index (s)."
 HEADERS = libft.h
 FLAGS = -Wall -Wextra -Werror
-SOURCES = ft_array_free.c \
+SOURCES = ft_atof.c \
+			ft_array_free.c \
 			ft_array_len.c \
 			ft_memcpy.c \
 			ft_printf.c \

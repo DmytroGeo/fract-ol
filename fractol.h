@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgeorgiy <dgeorgiy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dgeorgiy <dgeorgiy@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:53:20 by dgeorgiy          #+#    #+#             */
-/*   Updated: 2025/03/06 17:11:51 by dgeorgiy         ###   ########.fr       */
+/*   Updated: 2025/03/06 19:46:31 by dgeorgiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ typedef struct s_fractol
     double  zoom;
     double  offset_x;
     double  offset_y;
+    double  julia_cx;
+    double  julia_cy;
 }   t_fractol;
 
 void	my_mlx_pixel_put(t_img *data, int x, int y, int color);
@@ -57,5 +59,7 @@ int     mouse_hooks(int button, int x, int y, t_fractol *fractol);
 int     init_fractol(int argc, char **argv, t_fractol *fractol);
 int     get_color(int iteration, int max_iter);
 void    render(t_fractol *fractol);
+void    compute_mandelbrot(t_fractol *fractol, int x, int y);
+void    compute_julia(t_fractol *fractol, int x, int y);
 
 #endif

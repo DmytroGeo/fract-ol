@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgeorgiy <dgeorgiy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dgeorgiy <dgeorgiy@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 12:03:25 by dgeorgiy          #+#    #+#             */
-/*   Updated: 2025/02/24 15:11:36 by dgeorgiy         ###   ########.fr       */
+/*   Updated: 2025/03/06 19:37:26 by dgeorgiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ft_array_free(char **array);
-int	ft_array_len(char **array);
+int		ft_array_len(char **array);
+double	ft_atof(const char *str);
 
 #endif
