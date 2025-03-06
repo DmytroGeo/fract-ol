@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                         :+:      :+:    :+:   */
+/*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fract-ol_dev                                +#+  +:+       +#+        */
+/*   By: dgeorgiy <dgeorgiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 00:00:00 by fract-ol_dev      #+#    #+#             */
-/*   Updated: 2025/03/06 00:00:00 by fract-ol_dev     ###   ########.fr       */
+/*   Created: 2025/03/06 14:53:20 by dgeorgiy          #+#    #+#             */
+/*   Updated: 2025/03/06 14:57:01 by dgeorgiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include <mlx.h>
+# include "./mlx_linux/mlx.h"
 # include <stdlib.h>
 # include <math.h>
 # include "./libft/libft.h"
@@ -54,7 +54,7 @@ typedef struct s_fractol
     double  offset_y;
 }   t_fractol;
 
-void    put_pixel(t_img *img, int x, int y, int color);
+void    mlx_my_put_pixel(t_img *img, int x, int y, int color);
 int     close_window(t_fractol *fractol);
 int     key_hooks(int keycode, t_fractol *fractol);
 int     mouse_hooks(int button, int x, int y, t_fractol *fractol);

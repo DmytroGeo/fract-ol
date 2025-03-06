@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dgeorgiy <dgeorgiy@student.42london.com    +#+  +:+       +#+         #
+#    By: dgeorgiy <dgeorgiy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/24 19:28:41 by dgeorgiy          #+#    #+#              #
-#    Updated: 2025/03/06 09:08:41 by dgeorgiy         ###   ########.fr        #
+#    Updated: 2025/03/06 15:08:05 by dgeorgiy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,14 @@ NAME = fractol
 FLAGS = 
 LIBFT = libft/libft.a
 CC = cc
-SOURCES = fractol.c
+SOURCES = src/hooks.c \
+				src/colour.c \
+				src/close_and_exit.c \
+				src/initialise.c \
+				src/pixel_put.c \
+				src/render.c \
+				fractol.c
+
 OBJ = $(SOURCES:.c=.o)
 
 %.o: %.c
@@ -38,7 +45,7 @@ libft:
 		$(MAKE) -C libft
 
 $(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(OBJ) $(LIBFT) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) 
+	$(CC) $(FLAGS) $(LIBFT) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) $(OBJ)
 
 clean:
 		rm -f $(OBJ)
