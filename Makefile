@@ -6,12 +6,12 @@
 #    By: dgeorgiy <dgeorgiy@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/24 19:28:41 by dgeorgiy          #+#    #+#              #
-#    Updated: 2025/02/27 10:20:32 by dgeorgiy         ###   ########.fr        #
+#    Updated: 2025/03/06 09:08:41 by dgeorgiy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
-FLAGS = -Wall -Wextra -Werror
+FLAGS = 
 LIBFT = libft/libft.a
 CC = cc
 SOURCES = fractol.c
