@@ -6,14 +6,14 @@
 /*   By: dgeorgiy <dgeorgiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:53:20 by dgeorgiy          #+#    #+#             */
-/*   Updated: 2025/03/06 20:32:53 by dgeorgiy         ###   ########.fr       */
+/*   Updated: 2025/03/06 21:13:02 by dgeorgiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include "./mlx_linux/mlx.h"
+# include "./minilibx-linux/mlx.h"
 # include <stdlib.h>
 # include <math.h>
 # include <X11/keysym.h>

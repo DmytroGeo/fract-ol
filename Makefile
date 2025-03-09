@@ -6,7 +6,7 @@
 #    By: dgeorgiy <dgeorgiy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/24 19:28:41 by dgeorgiy          #+#    #+#              #
-#    Updated: 2025/03/06 20:02:47 by dgeorgiy         ###   ########.fr        #
+#    Updated: 2025/03/09 20:29:51 by dgeorgiy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ OBJ = $(SOURCES:.c=.o)
 %.o: %.c
 	$(CC) $(FLAGS) -I/usr/include -I mlx_linux -O3 -c $< -o $@
 
-all: libft $(NAME)
+all: minilibx libft $(NAME)
 
 # I actually made a mistake in the above line. It used to be: 
 # all: libft 
@@ -44,11 +44,13 @@ all: libft $(NAME)
 
 # mlx: 
 # 		$(MAKE) -C mlx_linux
-libft: 
+minilibx:
+			$(MAKE) -C minilibx-linux
+libft:
 		$(MAKE) -C libft
 
 $(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(OBJ) $(LIBFT) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) 
+	$(CC) $(OBJ) $(LIBFT) -Lminilibx-linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) 
 
 clean:
 		rm -f $(OBJ)
